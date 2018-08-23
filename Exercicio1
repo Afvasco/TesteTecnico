@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Salario {
+
+    
+    public static void main(String[] args) {
+       Scanner input = new Scanner( System.in );
+
+      double salario;
+      double pcini;
+      int ano;
+      int anobase;
+      
+      anobase = 2006;
+      salario = 1000;
+      pcini = 1.5;
+            
+      System.out.print( "Ano base de calculo  : " ); 
+      ano = input.nextInt(); 
+      
+      do{
+         salario = salario * (pcini/100 + 1);
+         
+         anobase +=1;
+         pcini *=2;
+         
+      }while(anobase <= ano);
+
+      System.out.printf( "O valor do salario atual em %d é de R$ %.2f.", ano, salario );
+    }
+    
+}
