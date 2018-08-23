@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Nmprimo {
+
+    public static void main(String[] args) {
+      Scanner entrada = new Scanner(System.in);
+        
+        int num1, num2, aux, aux2, teste, teste1;
+        
+        num1 = 0;
+        num2 = 0;
+        
+        do{
+        System.out.print("Informe o numero inicial:  ");
+        num1 = entrada.nextInt();
+        
+        System.out.print("Informe o numero final  :  ");
+        num2 = entrada.nextInt();
+        
+           if(num1 > num2){
+              System.out.println("Número final deve ser maior que o inicial");
+              System.out.println("Informe um novo par de números");
+              num1 = 0;
+              num2 = 0;
+           }
+        
+        }while(num1 == num2);
+        
+        aux = 1;
+        teste1 = 0;
+        
+        while(aux <= num2){
+            aux2 = 1;
+            do{
+               teste = aux % aux2;
+               if (teste == 0){
+                   teste1 += 1;
+               }
+               aux2++;
+            }while(aux2 <= aux);
+            if (teste1 == 2 & aux >= num1){
+                System.out.printf("%d ", aux);
+            }
+            teste1 = 0;
+            aux++;
+        }
+    }
+    
+}
