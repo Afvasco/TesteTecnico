@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class SalarioLiq {
+
+    
+    public static void main(String[] args) {
+      Scanner input = new Scanner( System.in );
+
+      double salbrt;
+      double salliq;
+      double salmin;
+      double vrhora;
+      double vrimp;
+      int htrab;
+      double tximp;
+      
+      salmin = 0;
+      htrab = 0;
+      tximp = 3;
+      
+      do{
+         System.out.print( "Informe o valor do Salário Mínimo : " ); 
+         salmin = input.nextInt(); 
+      
+         System.out.print( "Quantidade de horas trabalhadas   : " ); 
+         htrab = input.nextInt(); 
+         
+         if(salmin == 0){
+            System.out.println("Valor Salário Mínimo não pode ser zero");
+            System.out.println("Informe os valores novamente"); 
+            salmin = 0;
+            htrab = 0;
+         }
+         else if(htrab == 0){
+            System.out.println("Valor das horas trabalhadas não pode ser zero");
+            System.out.println("Informe os valores novamente"); 
+            salmin = 0;
+            htrab = 0;
+         }
+         
+      }while(salmin == 0 && htrab == 0);
+      
+      vrhora = salmin * 0.1;
+      salbrt = vrhora * htrab;
+      vrimp = salbrt * ( tximp / 100 );
+      
+      
+      salliq = salbrt - vrimp;
+      
+      System.out.printf( "O valor da hora trabalhada é de R$ %.2f.\n", vrhora );
+      System.out.printf( "O valor do salario bruto é de R$ %.2f.\n", salbrt );
+      System.out.printf( "O valor dos impostos é de R$ %.2f.\n", vrimp );
+      System.out.printf( "O valor do salario liquido é de R$ %.2f.\n", salliq );
+    }
+    
+}
