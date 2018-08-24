@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class Construcao
+{
+   public static void main( String[] args ) 
+   {
+      Scanner input = new Scanner( System.in );
+      int med1;
+      int med2; 
+      int area;
+      double area1;
+      int perim;
+      double perim1;
+      int arps;
+      int cpps;
+      int qtps;
+      int qtrd;
+
+      
+      System.out.print( "Informe a medida do 1° lado do Piso/Parede (cm): " ); 
+      med1 = input.nextInt(); 
+
+      System.out.print( "Informe a medida do 2° lado do Piso/Parede (cm): " ); 
+      med2 = input.nextInt(); 
+
+      area = med1 * med2;
+      area1 = (double) area / (100 * 100);
+      perim = (med1 * 2 ) + ( med2 * 2 );
+      perim1 = (double) perim /100;
+
+      arps = 30 * 30;
+      cpps = 30 * 3;
+      qtrd = 0;
+      qtps = 0;
+
+      if( qtps % arps == 0 ){
+          qtps = area / arps;
+      }
+      else
+      {
+         qtps = ( area / arps ) + 1;
+      }
+
+      if(qtrd % perim == 0 ){
+         qtrd = perim / cpps;
+      }
+      else
+      {
+         qtrd = ( perim / cpps ) + 1;
+      }
+
+      System.out.printf( "\nÁrea a ser coberta = %.2f\n", area1 );
+
+      System.out.printf( "Metragem dos rodapés = %.2f\n", perim1 );
+
+      System.out.printf( "Quantidade Pisos para cobertura = %d\n", qtps );
+
+      System.out.printf( "Quantidade Pisos para rodapé = %d\n", qtrd );    
+
+   } 
+}
