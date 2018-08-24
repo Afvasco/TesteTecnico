@@ -1,0 +1,46 @@
+public class CtCorrente
+{   
+   private double saldo;
+   private String nomeCli;
+   private int contaCorr;
+ 
+   public CtCorrente( double sdinic, String nome, int conta )
+   {
+      if ( sdinic > 0.0 ){
+         saldo = sdinic; 
+      }
+      nomeCli = nome;
+      contaCorr = conta;
+   } 
+
+   public void debito( double mvdeb )
+   {      
+      if ( mvdeb > saldo )
+      {
+         System.out.println( "Valor do débito é superior ao saldo disponível." );
+         return;
+      }
+   
+      saldo = saldo - mvdeb; 
+   } 
+
+   public void credito( double mvcred )
+   {      
+      saldo = saldo + mvcred;
+   } 
+
+   public int getContaCorr()
+   {
+      return contaCorr; 
+   }
+
+   public String getNomeCli()
+   {
+      return nomeCli; 
+   }
+
+   public double getSaldo()
+   {
+      return saldo; 
+   }
+}
