@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class LojaTintas {
+
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner( System.in );
+
+      int mtquad;
+      int litros;
+      float ltnec;
+      double custo;
+      
+      mtquad = 0;
+      
+      do{
+          
+      System.out.print( "Informe a área (m2) : " ); 
+      mtquad = input.nextInt(); 
+      
+         if(mtquad == 0){
+            System.out.println("Área não pode ser zero.");
+            System.out.println("Informe o valor novamente");
+            System.out.println(); 
+         }
+                
+      }while(mtquad == 0);
+            
+      if(mtquad % 3 == 0){
+         litros = mtquad / 3;
+      }
+      else{
+         litros = (mtquad / 3) + 1; 
+      }
+      
+      if(litros % 18 == 0){
+        ltnec = litros / 18;
+      }
+      else{
+         ltnec = (litros / 18) + 1;
+      }
+      
+      custo = ltnec * 80;
+      
+      System.out.printf( "\nÁrea da pintura             : %d\n", mtquad );
+      System.out.printf( "Litros de tinta necessários : %d\n", litros );
+      System.out.printf( "Latas de tinta necessárias  : %f\n", ltnec );
+      System.out.printf( "O valor da compra           : R$ %.2f.\n", custo );
+    }
+    
+}
