@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class CtCorrenteTeste
+{
+   public static void main( String[] args ) 
+   {
+      CtCorrente ctcorrente1 = new CtCorrente( 0.00, "Jose Silva", 1234 ); 
+
+      System.out.printf( "Conta : %d\n", ctcorrente1.getContaCorr() );
+      System.out.printf( "Cliente : %s\n", ctcorrente1.getNomeCli() );
+      System.out.printf( "Saldo : $%.2f\n", ctcorrente1.getSaldo() );
+
+      Scanner input = new Scanner( System.in );
+      double deposito;
+      double saque; 
+      String resp;
+      String nvnome = null;
+
+      System.out.print( "Se necessário atualize o nome do cliente " );
+      System.out.print( "Informe o nome " );
+      nvnome = input.nextLine(); 
+
+      if(nvnome == "" ){
+         nvnome = ctcorrente1.getNomeCli();
+      }
+
+      System.out.print( "Informe o valor do credito na Conta: " ); 
+      deposito = input.nextDouble(); 
+      System.out.printf( "\nCreditando %.2f no saldo da Conta\n\n", 
+         deposito );
+      ctcorrente1.credito( deposito ); 
+
+      System.out.print( "Informe o valor do debito na Conta: " ); 
+      saque = input.nextDouble(); 
+      System.out.printf( "\nDebitando %.2f no saldo da Conta\n\n", 
+         saque );
+      ctcorrente1.debito( saque ); 
+
+      System.out.println( "Dados atualizados" );
+      System.out.printf( "Numero Conta : %d\n", 
+         ctcorrente1.getContaCorr() );
+      System.out.printf( "Nome Cliente: %s\n", 
+         nvnome );
+      System.out.printf( "Saldo Conta : $%.2f\n", 
+         ctcorrente1.getSaldo() );
+   } 
+}
